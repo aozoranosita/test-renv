@@ -1,0 +1,14 @@
+services:
+  rstudio:
+    image: test_renv
+    build:
+      context: _rstudio
+    ports:
+      - "8787:8787"
+    environment:
+      - PASSWORD=password
+      - DISABLE_AUTH=true
+      - RENV_PATHS_CACHE=/home/rstudio/.local/share/renv/cache
+    volumes:
+      - .:/home/rstudio/project
+      - ${RENV_PATHS_CACHE_HOST}:/home/rstudio/.local/share/renv/cache
