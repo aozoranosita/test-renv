@@ -1,6 +1,6 @@
 services:
   rstudio:
-    image: test_renv
+    image: arut0/test-renv
     build:
       context: _rstudio
     ports:
